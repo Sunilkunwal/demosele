@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class MyTest {
+public class AstroSyni {
     public static void main(String[] args) {
     	
     	//Invoking Browser 
@@ -17,7 +17,8 @@ public class MyTest {
     	
     	
     	//chromedriver.exe--> chrome browser
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
         
 
         // webdriver.chrome.driver-->value of path
@@ -28,10 +29,12 @@ public class MyTest {
         
         //webdriver.gecko.driver
 //    	System.setProperty("webdriver.gecko.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\geckodriver.exe");
+//    	System.setProperty("webdriver.gecko.driver", "kali");
 //        WebDriver driver1 = new FirefoxDriver();
         
         //webdriver.gecko.driver
 //    	System.setProperty("webdriver.edge.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\msedgedriver.exe");
+//    	System.setProperty("webdriver.edge.driver", "kali");
 //        WebDriver driver2 = new EdgeDriver();
         
         
