@@ -9,7 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class AstroSyni {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
     	
     	//Invoking Browser 
     	//Chrome - ChromeDriver exten-->Methods close get
@@ -20,8 +20,8 @@ public class AstroSyni {
     	
     	
     	//chromedriver.exe--> chrome browser
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
-//        System.setProperty("webdriver.chrome.driver", "/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
         
 
         // webdriver.chrome.driver-->value of path
@@ -32,8 +32,8 @@ public class AstroSyni {
         
         //webdriver.gecko.driver
 //    	System.setProperty("webdriver.gecko.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\geckodriver.exe");
-//    	System.setProperty("webdriver.gecko.driver", "kali");
-//        WebDriver driver1 = new FirefoxDriver();
+//    	System.setProperty("webdriver.gecko.driver", "/home/sunil/Downloads/Selenium Drivers/geckodriver-v0.34.0-linux64/geckodriver");
+//        WebDriver driver = new FirefoxDriver();
         
         //webdriver.gecko.driver
 //    	System.setProperty("webdriver.edge.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\msedgedriver.exe");
@@ -56,11 +56,12 @@ public class AstroSyni {
         driver.findElement(By.id("autocomplete")).sendKeys("kota");
         driver.findElement(By.id("inputZip")).sendKeys("324009");
         driver.findElement(By.className("note-editable")).sendKeys("test");
-        driver.findElement(By.className("astro-btn")).click();
         
+        Thread.sleep(5000);
+        driver.findElement(By.cssSelector(".astro-btn")).click();
         
-        driver.close();
-        
+//        driver.close();
+  
       
         
         
