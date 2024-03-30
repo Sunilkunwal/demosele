@@ -12,6 +12,7 @@ public class Seleniumdemo {
 		// TODO Auto-generated method stub
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+//	      System.setProperty("webdriver.chrome.driver", "/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
 		 WebDriver driver = new ChromeDriver();
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		 
@@ -46,7 +47,7 @@ public class Seleniumdemo {
 		 
 		 driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
 		 
-//		 driver.close();
+		 driver.close();
 	}
 
 }
