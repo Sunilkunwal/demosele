@@ -56,7 +56,7 @@ public class AstroSyni {
         driver.findElement(By.id("autocomplete")).sendKeys("kota");
         driver.findElement(By.id("inputZip")).sendKeys("324009");
         driver.findElement(By.className("note-editable")).sendKeys("test");
-        driver.findElement(By.className("astro-btn")).click();
+        driver.findElement(By.id("continue")).click();
         
         
         driver.close();
