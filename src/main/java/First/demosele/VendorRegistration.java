@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class AstroSyni {
+public class VendorRegistration {
     public static void main(String[] args) throws InterruptedException{
     	
     	//Invoking Browser 
@@ -73,7 +73,7 @@ public class AstroSyni {
        System.out.println(driver.findElement(By.cssSelector("body > section:nth-child(8) > form:nth-child(2) > div:nth-child(1) > div:nth-child(3) > p:nth-child(3)")).getText());
        System.out.println(driver.findElement(By.cssSelector("div[class='col-4'] div p[class='text-danger text-xs mt-2']")).getText());
      
-
+       
        
         driver.close();
        
