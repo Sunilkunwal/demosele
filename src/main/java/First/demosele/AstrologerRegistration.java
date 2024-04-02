@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
 
 public class AstrologerRegistration {
 
@@ -19,33 +19,43 @@ public class AstrologerRegistration {
 		  
 		  driver.get("https://astrovastutalks.com/astrologer-register");
 		  
-		  driver.findElement(By.xpath("//input[@id='validationCustom01']")).sendKeys("Sunil");
-		  driver.findElement(By.cssSelector("#validationCustom02")).sendKeys("Astro Sunil");
-		  driver.findElement(By.cssSelector("#inputEmail4")).sendKeys("Sunil452@mail.com");
-		  driver.findElement(By.cssSelector("body > section:nth-child(8) > form:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > input:nth-child(2)")).sendKeys("9878974785");
-		  driver.findElement(By.cssSelector("input[placeholder='Experience']")).sendKeys("5");
-		  driver.findElement(By.cssSelector("#house_no")).sendKeys("5");
-		  driver.findElement(By.cssSelector("#street_area")).sendKeys("boarkheda");
-		  driver.findElement(By.cssSelector("#landmark")).sendKeys("Kanchan resort");
-		  driver.findElement(By.cssSelector("#inputZip")).sendKeys("324005");
-		  driver.findElement(By.cssSelector("body > section:nth-child(8) > form:nth-child(1) > div:nth-child(1) > div:nth-child(21) > input:nth-child(2)")).sendKeys("QWERT1234L");
-		  driver.findElement(By.cssSelector("div[role='textbox']")).sendKeys("Test Description");
-		  driver.findElement(By.cssSelector("input[placeholder='Bank Name']")).sendKeys("State Bank Of India");
-		  driver.findElement(By.cssSelector("input[placeholder='IFSC Code']")).sendKeys("SBIN0032065");
-		  driver.findElement(By.cssSelector("input[placeholder='Account No']")).sendKeys("58846976548");
-		  driver.findElement(By.cssSelector("input[placeholder='Account Holder Name']")).sendKeys("John Methew");
-		  driver.findElement(By.cssSelector("#writing_language")).sendKeys("test");
-		  driver.findElement(By.cssSelector("#writing_details")).sendKeys("test");
-		  driver.findElement(By.cssSelector("#teaching_subject")).sendKeys("test");
-		  driver.findElement(By.cssSelector("#teaching_subject")).sendKeys("5");
-		  driver.findElement(By.cssSelector("#existing_fees")).sendKeys("500");
+		  driver.findElement(By.xpath("//input[@id='validationCustom01']")).sendKeys("Sunil");	//Name 
+		  driver.findElement(By.cssSelector("#validationCustom02")).sendKeys("Astro Sunil");	//Display Name
+		  driver.findElement(By.cssSelector("#inputEmail4")).sendKeys("Sunil452@mail.com");		//Email 
+		  driver.findElement(By.cssSelector("body > section:nth-child(8) > form:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > input:nth-child(2)")).sendKeys("9878974785");	//Mobile No.
+		  driver.findElement(By.cssSelector("input[placeholder='Experience']")).sendKeys("5");	//Experience(Years) 
+		  driver.findElement(By.cssSelector("#house_no")).sendKeys("5");						//House No
+		  driver.findElement(By.cssSelector("#street_area")).sendKeys("boarkheda");				//Street Area
+		  driver.findElement(By.cssSelector("#landmark")).sendKeys("Kanchan resort");			//Landmark
+		  driver.findElement(By.cssSelector("#inputZip")).sendKeys("324005");					//Pincode
+		  driver.findElement(By.cssSelector("body > section:nth-child(8) > form:nth-child(1) > div:nth-child(1) > div:nth-child(21) > input:nth-child(2)")).sendKeys("QWERT1234L");		//PAN Number
+		  driver.findElement(By.cssSelector("div[role='textbox']")).sendKeys("Test Description");	//Long Biography
+		  driver.findElement(By.cssSelector("input[placeholder='Bank Name']")).sendKeys("State Bank Of India");		//Bank Name
+		  driver.findElement(By.cssSelector("input[placeholder='IFSC Code']")).sendKeys("SBIN0032065");		//IFSC Code
+		  driver.findElement(By.cssSelector("input[placeholder='Account No']")).sendKeys("58846976548");	//Account No
+		  driver.findElement(By.cssSelector("input[placeholder='Account Holder Name']")).sendKeys("John Methew");	//Account Holder Name
+		  driver.findElement(By.cssSelector("#writing_language")).sendKeys("test");		//Writing Language
+		  driver.findElement(By.cssSelector("#writing_details")).sendKeys("test");		//Writing Details
+		  driver.findElement(By.cssSelector("#teaching_subject")).sendKeys("test");		//Teaching Subjects
+		  driver.findElement(By.cssSelector("#existing_fees")).sendKeys("500");			//Your Existing Consultation Fees
+		  driver.findElement(By.xpath("//input[@id='teaching_year']")).sendKeys("10");	//Teaching Year (Number of Years)
 		  
-		  WebElement dropdown = driver.findElement(By.xpath("//section[contains(@class,'text-light bg-light p-2 formsection')]//form"));
-	      dropdown.click();
+		  
+		  
+		  
+		  WebElement dropdownAvailableGadgets = driver.findElement(By.xpath("//section[contains(@class,'text-light bg-light p-2 formsection')]//form"));
+		  dropdownAvailableGadgets.click();
 	      WebElement option = driver.findElement(By.xpath("//section[contains(@class,'text-light bg-light p-2 formsection')]//form//option[text()='Desktop']"));
 	      option.click();
 	      
 	      
+//	      WebElement dropdownCategory = driver.findElement(By.xpath("//section[contains(@class,"));
+//	      dropdownCategory.click();
+	      
+	    
+	      WebElement element = driver.findElement(By.id("continue"));
+	      Actions actions = new Actions(driver);
+	      actions.moveToElement(element).click().build().perform();
 		  
 		  
 	      
