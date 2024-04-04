@@ -55,8 +55,8 @@ public class VendorRegistration {
 //       driver.close();
 //       driver.quit();
         driver.findElement(By.id("validationCustom01")).sendKeys("Sunil");
-        driver.findElement(By.id("inputEmail4")).sendKeys("suniall@gmail.com");
-        driver.findElement(By.id("inputPassword4")).sendKeys("9887745654");
+        driver.findElement(By.id("inputEmail4")).sendKeys("suniallaaa@gmail.com");
+        driver.findElement(By.id("inputPassword4")).sendKeys("9877745654");
         driver.findElement(By.name("firm_name")).sendKeys("Ram lal and son's Traders");
         driver.findElement(By.id("gst_no")).sendKeys("AAA09QWERT1234HAD");
         driver.findElement(By.id("autocomplete")).sendKeys("kota");
