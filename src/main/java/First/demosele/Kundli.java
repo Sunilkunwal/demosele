@@ -25,10 +25,11 @@ public class Kundli {
 
 		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
 		  WebDriver driver = new ChromeDriver();
+		  driver.manage().window().maximize();
 		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		  driver.get("https://astro.synilogictech.com/free-kundali");
 		  
-		 //calendor
+		 //Date of Birth
 		  LocalDate currentDate = LocalDate.now();
 		  DateTimeFormatter Dateformatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	      String formattedDate = currentDate.format(Dateformatter);
@@ -36,23 +37,50 @@ public class Kundli {
 	      js.executeScript("arguments[0].value = arguments[1];", driver.findElement(By.name("dob")), formattedDate);
 	      
 	      
-	      //time
+	      //Time of Birth
 	      WebElement timePickerInput = driver.findElement(By.name("tob"));
 	      timePickerInput.click();
 	      Actions actions = new Actions(driver);
-	      actions.sendKeys("04:10:45 PM").perform();
+	      actions.sendKeys("04:10:45PM").perform();
 	      
-
-	      //place of birh 
-	      WebElement dropdownWebElement = driver.findElement(By.xpath("//input[@id='free_kundli_location']"));
-	      dropdownWebElement.click(); 
-	      dropdownWebElement.sendKeys("Kota");
-	      Thread.sleep(3000);
-	      WebElement firstOption = driver.findElement(By.xpath("//ul[@id='ui-id-1']//li[1]"));
-	      Thread.sleep(3000);
-	      firstOption.click();
+	    
+	      //Place of birth
+	      driver.findElement(By.id("free_kundli_location")).sendKeys("kota");
+	      List<WebElement> options =driver.findElements(By.xpath("//div[@class='pac-item'] /span"));
+			 
+			 for(WebElement option :options) 
+			 {
+				 
+				 if(option.getText().equalsIgnoreCase("Kota"))
+				 {
+					 option.click();
+					 break;
+				 }
+			 }
 	      
-	     
+	      
+		//Div
+	    WebElement divDropdown = driver.findElement(By.name("div_field"));
+	    Select dropdown = new Select(divDropdown);
+	    dropdown.selectByValue("D3");
+	    
+	    
+	    //Style
+	    WebElement StyleDropdown = driver.findElement(By.name("style_field"));
+	    Select dropdown1 = new Select(StyleDropdown);
+	    dropdown1.selectByValue("south");
+	    
+	    
+	    //Language
+	    WebElement LanguageDropdown = driver.findElement(By.name("language"));
+	    Select dropdown2 =new Select(LanguageDropdown);
+	    dropdown2.selectByValue("hi");
+	    
+	    
+	    //Submit Button 
+	    Thread.sleep(1000);
+	    driver.findElement(By.xpath("//div[@class='text-right']")).click();
+	    
 	     
 	      
 	     
