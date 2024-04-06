@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class AstroSynilogic {
+public class CustomerLogin {
 
 	public static void main(String[] args) throws InterruptedException {
 		String mobileNo = "9667737387";

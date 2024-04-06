@@ -12,12 +12,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Kundli {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		
 
@@ -42,6 +43,17 @@ public class Kundli {
 	      
 
 	      //place of birh 
+	      WebElement dropdownWebElement = driver.findElement(By.xpath("//input[@id='free_kundli_location']"));
+	      dropdownWebElement.click(); 
+	      dropdownWebElement.sendKeys("Kota");
+	      Thread.sleep(3000);
+	      WebElement firstOption = driver.findElement(By.xpath("//ul[@id='ui-id-1']//li[1]"));
+	      Thread.sleep(3000);
+	      firstOption.click();
+	      
+	     
+	     
+	      
 	     
 
 	     
