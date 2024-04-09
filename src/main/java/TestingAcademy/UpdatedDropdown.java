@@ -3,6 +3,7 @@ package TestingAcademy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class UpdatedDropdown {
 
@@ -31,6 +32,7 @@ public class UpdatedDropdown {
 		 }
 		 
 		 	driver.findElement(By.id("btnclosepaxoption")).click();
+		 	Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adult");
 		 	
 		 	System.out.println( driver.findElement(By.id("divpaxinfo")).getText());
 		 	
