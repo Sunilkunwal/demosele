@@ -48,15 +48,15 @@ public class VendorRegistration {
 //        WebDriver driver2 = new EdgeDriver();
         
         
-        driver.get("https://astrovastutalks.com/vendor-register");
+        driver.get("https://astrogyanbindu.com/vendor-register");
        
 //       System.out.println(driver.getTitle());
 //       System.out.println(driver.getCurrentUrl());
 //       driver.close();
 //       driver.quit();
         driver.findElement(By.id("validationCustom01")).sendKeys("Sunil");
-        driver.findElement(By.id("inputEmail4")).sendKeys("suniallaaa@gmail.com");
-        driver.findElement(By.id("inputPassword4")).sendKeys("9877745654");
+        driver.findElement(By.id("inputEmail4")).sendKeys("laalabhai1@gmail.com");
+        driver.findElement(By.id("inputPassword4")).sendKeys("9877746041");
         driver.findElement(By.name("firm_name")).sendKeys("Ram lal and son's Traders");
         driver.findElement(By.id("gst_no")).sendKeys("AAA09QWERT1234HAD");
         driver.findElement(By.id("autocomplete")).sendKeys("kota");
@@ -70,10 +70,14 @@ public class VendorRegistration {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().build().perform();
         
-       System.out.println(driver.findElement(By.cssSelector("body > section:nth-child(8) > form:nth-child(2) > div:nth-child(1) > div:nth-child(3) > p:nth-child(3)")).getText());
-       System.out.println(driver.findElement(By.cssSelector("div[class='col-4'] div p[class='text-danger text-xs mt-2']")).getText());
-     
+//       System.out.println(driver.findElement(By.cssSelector("body > section:nth-child(8) > form:nth-child(2) > div:nth-child(1) > div:nth-child(3) > p:nth-child(3)")).getText());
+//       System.out.println(driver.findElement(By.cssSelector("div[class='col-4'] div p[class='text-danger text-xs mt-2']")).getText());
        
+        
+       //Toast location 
+      //script[@class='iti-load-utils']
+        
+        
        
         driver.close();
        
