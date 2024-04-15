@@ -13,13 +13,12 @@ public class AstrologerRegistration {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		
 //		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
-		  WebDriver driver = new ChromeDriver();
-		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		  
-		  driver.get("https://astrovastutalks.com/astrologer-register");
-		  
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+		driver.get("https://astrovastutalks.com/astrologer-register");
+
 //		  driver.findElement(By.xpath("//input[@id='validationCustom01']")).sendKeys("Sunil");	//Name 
 //		  driver.findElement(By.cssSelector("#validationCustom02")).sendKeys("Astro Sunil");	//Display Name
 //		  driver.findElement(By.cssSelector("#inputEmail4")).sendKeys("Sunil452@mail.com");		//Email 
@@ -49,33 +48,27 @@ public class AstrologerRegistration {
 //	      WebElement option = driver.findElement(By.xpath("//section[contains(@class,'text-light bg-light p-2 formsection')]//form//option[text()='Desktop']"));
 //	      option.click();
 //	      
-	      
+
 //	      WebElement dropdownCategory = driver.findElement(By.xpath("//section[contains(@class,"));
 //	      dropdownCategory.click();
-	      
-	    
+
 //	      WebElement element = driver.findElement(By.id("continue"));
 //	      Actions actions = new Actions(driver);
 //	      actions.moveToElement(element).click().build().perform();
-		  
-	      
-	    //css div[class='pac-item'] span
-	      driver.findElement(By.id("autocomplete")).sendKeys("kota");
-			 Thread.sleep(2000);
-			 List<WebElement> options =driver.findElements(By.cssSelector("iv[class='pac-item'] span"));
-			 
-			 for(WebElement option11 :options) 
-			 {
-				 
-				 if(option11.getText().equalsIgnoreCase("Rajasthan, India"))
-				 {
-					 option11.click();
-					 break;
-				 }
-			 }
-		  
-	      
-	      
+
+		// css div[class='pac-item'] span
+		driver.findElement(By.id("autocomplete")).sendKeys("kota");
+		Thread.sleep(2000);
+		List<WebElement> options = driver.findElements(By.cssSelector("iv[class='pac-item'] span"));
+
+		for (WebElement option11 : options) {
+
+			if (option11.getText().equalsIgnoreCase("Rajasthan, India")) {
+				option11.click();
+				break;
+			}
+		}
+
 //		  Astrologer Image
 //		  Birth Date
 //		  Category 
@@ -88,18 +81,7 @@ public class AstrologerRegistration {
 //		  Do You Have Any Teaching Experience
 //		  Do You Have Any Existing Website
 //		  Are You Associate With any Temple
-		  
-		 
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-		  
-	        
+
 //	        WebElement uploadButton = driver.findElement(By.cssSelector(".upload-icn"));
 //	        uploadButton.click();
 //	        WebElement fileInput = driver.findElement(By.cssSelector(".upload-icn"));

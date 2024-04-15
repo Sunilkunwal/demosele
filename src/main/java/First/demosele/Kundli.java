@@ -16,52 +16,36 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class Kundli {
 
 	public static void main(String[] args) throws InterruptedException {
-		
-		
 
-		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
-		  WebDriver driver = new ChromeDriver();
-		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		  driver.get("https://astro.synilogictech.com/free-kundali");
-		  
-		 //calendor
-		  LocalDate currentDate = LocalDate.now();
-		  DateTimeFormatter Dateformatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-	      String formattedDate = currentDate.format(Dateformatter);
-	      JavascriptExecutor js = (JavascriptExecutor) driver;
-	      js.executeScript("arguments[0].value = arguments[1];", driver.findElement(By.name("dob")), formattedDate);
-	      
-	      
-	      //time
-	      WebElement timePickerInput = driver.findElement(By.name("tob"));
-	      timePickerInput.click();
-	      Actions actions = new Actions(driver);
-	      actions.sendKeys("04:10:45 PM").perform();
-	      
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get("https://astro.synilogictech.com/free-kundali");
 
-	      //place of birh 
-	      WebElement dropdownWebElement = driver.findElement(By.xpath("//input[@id='free_kundli_location']"));
-	      dropdownWebElement.click(); 
-	      dropdownWebElement.sendKeys("Kota");
-	      Thread.sleep(3000);
-	      WebElement firstOption = driver.findElement(By.xpath("//ul[@id='ui-id-1']//li[1]"));
-	      Thread.sleep(3000);
-	      firstOption.click();
-	      
-	     
-	     
-	      
-	     
-	      
-	    
+		// calendor
+		LocalDate currentDate = LocalDate.now();
+		DateTimeFormatter Dateformatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String formattedDate = currentDate.format(Dateformatter);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value = arguments[1];", driver.findElement(By.name("dob")), formattedDate);
 
+		// time
+		WebElement timePickerInput = driver.findElement(By.name("tob"));
+		timePickerInput.click();
+		Actions actions = new Actions(driver);
+		actions.sendKeys("04:10:45 PM").perform();
 
-	     
-	        
+		// place of birh
+		WebElement dropdownWebElement = driver.findElement(By.xpath("//input[@id='free_kundli_location']"));
+		dropdownWebElement.click();
+		dropdownWebElement.sendKeys("Kota");
+		Thread.sleep(3000);
+		WebElement firstOption = driver.findElement(By.xpath("//ul[@id='ui-id-1']//li[1]"));
+		Thread.sleep(3000);
+		firstOption.click();
 
 	}
 

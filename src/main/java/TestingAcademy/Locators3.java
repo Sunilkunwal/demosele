@@ -9,16 +9,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Locators3 {
 
 	public static void main(String[] args) {
-		
-		
-		System.setProperty("webdriver.chrome.driver", "/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
-		 WebDriver driver = new ChromeDriver();
-		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		 
-		 driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		 System.out.println(driver.findElement(By.xpath("//header/div/button[1]/following-sibling::button[1]")).getText());
-		 System.out.println(driver.findElement(By.xpath("//header/div/button[1]/parent::div/button[2]")).getText());
-		 driver.close();
+
+		System.setProperty("webdriver.chrome.driver",
+				"/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		System.out
+				.println(driver.findElement(By.xpath("//header/div/button[1]/following-sibling::button[1]")).getText());
+		System.out.println(driver.findElement(By.xpath("//header/div/button[1]/parent::div/button[2]")).getText());
+		driver.close();
 
 	}
 
