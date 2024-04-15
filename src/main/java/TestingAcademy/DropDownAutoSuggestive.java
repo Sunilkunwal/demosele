@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class DropDownAutoSuggestive {
 
 	public static void main(String[] args) throws InterruptedException {
+
 		System.setProperty("webdriver.chrome.driver",
 				"/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
 		WebDriver driver = new ChromeDriver();
