@@ -10,25 +10,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class DropDownAutoSuggestive {
 
 	public static void main(String[] args) throws InterruptedException {
-//		System.setProperty("webdriver.chrome.driver", "/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
-		 WebDriver driver = new ChromeDriver();
-		 
-		 driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
-		 driver.findElement(By.id("autosuggest")).sendKeys("ind");
-		 Thread.sleep(2000);
-		 List<WebElement> options =driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
-		 
-		 for(WebElement option :options) 
-		 {
-			 
-			 if(option.getText().equalsIgnoreCase("India"))
-			 {
-				 option.click();
-				 break;
-			 }
-		 }
-		 	
+		System.setProperty("webdriver.chrome.driver",
+				"/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+
+		driver.findElement(By.id("autosuggest")).sendKeys("ind");
+		Thread.sleep(2000);
+		List<WebElement> options = driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
+
+		for (WebElement option : options) {
+
+			if (option.getText().equalsIgnoreCase("India")) {
+				option.click();
+				break;
+			}
+		}
+
 	}
 
 }

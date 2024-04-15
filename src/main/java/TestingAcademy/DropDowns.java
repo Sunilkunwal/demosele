@@ -9,32 +9,23 @@ import org.openqa.selenium.support.ui.Select;
 public class DropDowns {
 
 	public static void main(String[] args) {
-		
-		
-		System.setProperty("webdriver.chrome.driver", "/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
-		 WebDriver driver = new ChromeDriver();
-		 driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-		 //dropdown with select tag - static
-		 WebElement staticDropdown = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
-		 
-		 Select dropdown = new Select(staticDropdown);
-		 dropdown.selectByIndex(3);
-		 System.out.println(dropdown.getFirstSelectedOption().getText());
-		 dropdown.selectByVisibleText("AED");
-		 System.out.println(dropdown.getFirstSelectedOption().getText());
-		 dropdown.selectByValue("INR");
-		 System.out.println(dropdown.getFirstSelectedOption().getText());
-		 
-		 
-		 
-		 driver.close();
-		 
-		 
-		 
-		 
-		
-		
-	
+
+		System.setProperty("webdriver.chrome.driver",
+				"/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		// dropdown with select tag - static
+		WebElement staticDropdown = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
+
+		Select dropdown = new Select(staticDropdown);
+		dropdown.selectByIndex(3);
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+		dropdown.selectByVisibleText("AED");
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+		dropdown.selectByValue("INR");
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+
+		driver.close();
 
 	}
 

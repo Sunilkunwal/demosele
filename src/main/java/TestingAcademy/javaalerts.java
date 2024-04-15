@@ -1,25 +1,27 @@
 package TestingAcademy;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Locators3 {
+public class javaalerts {
 
 	public static void main(String[] args) {
 
 		System.setProperty("webdriver.chrome.driver",
 				"/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
 		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		System.out
-				.println(driver.findElement(By.xpath("//header/div/button[1]/following-sibling::button[1]")).getText());
-		System.out.println(driver.findElement(By.xpath("//header/div/button[1]/parent::div/button[2]")).getText());
-		driver.close();
+		String text = "Sunil Kunwal";
+		driver.findElement(By.id("name")).sendKeys(text);
+		driver.findElement(By.cssSelector("input[value='Alert']")).click();
+
+		System.out.println(driver.switchTo().alert().getText());
+		driver.switchTo().alert().accept();
+
+		driver.findElement(By.id("confirmbtn")).click();
+		System.out.println(driver.switchTo().alert().getText());
+		driver.switchTo().alert().dismiss();
 
 	}
 

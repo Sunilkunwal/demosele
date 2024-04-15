@@ -16,13 +16,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class Kundli {
 
 	public static void main(String[] args) throws InterruptedException {
-		
-		
 
+		
 		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
 		  WebDriver driver = new ChromeDriver();
 		  driver.manage().window().maximize();
@@ -80,16 +78,6 @@ public class Kundli {
 	    //Submit Button 
 	    Thread.sleep(1000);
 	    driver.findElement(By.xpath("//div[@class='text-right']")).click();
-	    
-	     
-	      
-	     
-	      
-	    
-
-
-	     
-	        
 
 	}
 
