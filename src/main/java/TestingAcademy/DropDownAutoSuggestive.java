@@ -20,7 +20,7 @@ public class DropDownAutoSuggestive {
 		driver.findElement(By.id("autosuggest")).sendKeys("ind");
 		Thread.sleep(2000);
 		List<WebElement> options = driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
-
+		
 		for (WebElement option : options) {
 
 			if (option.getText().equalsIgnoreCase("India")) {
