@@ -12,7 +12,7 @@ public class VendorRegistrations {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://astrovastutalks.com/vendor-register");
 
@@ -34,11 +34,13 @@ public class VendorRegistrations {
 //		Select your Location
 		driver.findElement(By.id("autocomplete")).sendKeys("kota");
 		Thread.sleep(2000);
-		List<WebElement> options = driver.findElements(By.xpath("//div[@class='pac-matched'] /span"));
+		List<WebElement> options = driver
+				.findElements(By.xpath("//body/div[@class='pac-container pac-logo']/div[1]/span[2]/span[1]"));
 
 		for (WebElement option : options) {
 
 			if (option.getText().equalsIgnoreCase("kota")) {
+				Thread.sleep(1000);
 				option.click();
 				break;
 			}
@@ -51,9 +53,9 @@ public class VendorRegistrations {
 		driver.findElement(By.className("note-editable")).sendKeys("test");
 
 //		submiteButton
-//		WebElement element = driver.findElement(By.id("continue"));
-//		Actions actions = new Actions(driver);
-//		actions.moveToElement(element).click().build().perform();
+		WebElement element = driver.findElement(By.id("continue"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).click().build().perform();
 
 	}
 

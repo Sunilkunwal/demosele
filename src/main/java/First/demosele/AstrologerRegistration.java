@@ -16,14 +16,15 @@ public class AstrologerRegistration {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //		driver.manage().window().maximize();
 
 //		  Astrologer Image
 		driver.get("https://astrovastutalks.com/astrologer-register");
-		File uploadFile = new File("src\\test\\java\\First\\demosele\\userimage.png");
+//		File uploadFile = new File("src\\test\\java\\First\\demosele\\userimage.png");
+		File uploadFile = new File("/home/sunil/git/demosele/src/test/java/First/demosele/userimage.png");
 
 		WebElement fileInput = driver.findElement(By.cssSelector("#astro_img"));
 		fileInput.sendKeys(uploadFile.getAbsolutePath());
@@ -69,16 +70,18 @@ public class AstrologerRegistration {
 		driver.findElement(By.cssSelector("#landmark")).sendKeys("Kanchan resort");
 
 //		  Select your Location
-//		driver.findElement(By.id("autocomplete")).sendKeys("kota");
-//		List<WebElement> options = driver.findElements(By.xpath("//div[@class='pac-item'] /span"));
-//
-//		for (WebElement option : options) {
-//
-//			if (option.getText().equalsIgnoreCase("kota")) {
-//				option.click();
-//				break;
-//			}
-//		}
+		driver.findElement(By.id("autocomplete")).sendKeys("kota");
+		List<WebElement> options = driver
+				.findElements(By.xpath("//body/div[@class='pac-container pac-logo']/div[1]/span[2]/span[1]"));
+
+		for (WebElement option : options) {
+
+			if (option.getText().equalsIgnoreCase("kota")) {
+				Thread.sleep(1000);
+				option.click();
+				break;
+			}
+		}
 
 //		 Pincode
 		driver.findElement(By.cssSelector("#inputZip")).sendKeys("324005");
