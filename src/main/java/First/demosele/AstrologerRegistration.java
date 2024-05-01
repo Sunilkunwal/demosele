@@ -23,8 +23,8 @@ public class AstrologerRegistration {
 
 //		  Astrologer Image
 		driver.get("https://astrovastutalks.com/astrologer-register");
-//		File uploadFile = new File("src\\test\\java\\First\\demosele\\userimage.png");
-		File uploadFile = new File("/home/sunil/git/demosele/src/test/java/First/demosele/userimage.png");
+		File uploadFile = new File("src\\test\\java\\First\\demosele\\userimage.png");
+//		File uploadFile = new File("/home/sunil/git/demosele/src/test/java/First/demosele/userimage.png");
 
 		WebElement fileInput = driver.findElement(By.cssSelector("#astro_img"));
 		fileInput.sendKeys(uploadFile.getAbsolutePath());
@@ -114,6 +114,9 @@ public class AstrologerRegistration {
 //		 Add Document
 
 //		  Do You Have Any Writing Experience
+
+		
+
 
 //		 Writing Language
 		driver.findElement(By.cssSelector("#writing_language")).sendKeys("test");
