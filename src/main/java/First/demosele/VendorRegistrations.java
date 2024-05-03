@@ -20,10 +20,10 @@ public class VendorRegistrations {
 		driver.findElement(By.id("validationCustom01")).sendKeys("Sunil");
 
 //		Email
-		driver.findElement(By.id("inputEmail4")).sendKeys("suniallaaa@gmail.com");
+		driver.findElement(By.id("inputEmail4")).sendKeys("suniall123@gmail.com");
 
 //		Mobile No.
-		driver.findElement(By.id("inputPassword4")).sendKeys("9877745654");
+		driver.findElement(By.id("inputPassword4")).sendKeys("9898745654");
 
 //		GST Number
 		driver.findElement(By.id("gst_no")).sendKeys("AAA09QWERT1234HAD");
