@@ -11,15 +11,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AstrologerRegistration {
 
 	public static void main(String[] args) throws InterruptedException {
 
-//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //		driver.manage().window().maximize();
+		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
 //		  Astrologer Image
 		driver.get("https://astrovastutalks.com/astrologer-register");
@@ -55,10 +58,26 @@ public class AstrologerRegistration {
 		driver.findElement(By.cssSelector("input[placeholder='Experience']")).sendKeys("5");
 
 //		Category 
-
+		Actions a = new Actions(driver);
+		WebElement CategoryField = driver.findElement(By.xpath("(//span[@class='select2-selection select2-selection--multiple'])[1]"));
+		a.moveToElement(CategoryField).click().build().perform();
+		System.out.println(driver.findElement(By.cssSelector("[class='select2-results__options']")).getText());
+		WebElement VedicAstrologyoption = driver.findElement(By.xpath("//li[@class='select2-results__option'][1]")); 
+		VedicAstrologyoption.click();
+		
 //		Language 
-
+		WebElement LanguageField = driver.findElement(By.xpath("(//span[@class='select2-selection select2-selection--multiple'])[2]"));
+		a.moveToElement(LanguageField).click().build().perform();
+		System.out.println(driver.findElement(By.cssSelector("[class='select2-results__options']")).getText());
+		WebElement Englishoption = driver.findElement(By.xpath("//li[@class='select2-results__option'][1]")); 
+		Englishoption.click();
+		
 //		Skills 
+		WebElement SkillsField = driver.findElement(By.xpath("(//span[@class='select2-selection select2-selection--multiple'])[3]"));
+		a.moveToElement(SkillsField).click().build().perform();
+		System.out.println(driver.findElement(By.cssSelector("[class='select2-results__options']")).getText());
+		WebElement ChildBirthoption = driver.findElement(By.xpath("//li[@class='select2-results__option'][1]")); 
+		ChildBirthoption.click();
 
 //		 House No
 		driver.findElement(By.cssSelector("#house_no")).sendKeys("5");
@@ -116,8 +135,6 @@ public class AstrologerRegistration {
 //		  Do You Have Any Writing Experience
 
 		
-
-
 //		 Writing Language
 		driver.findElement(By.cssSelector("#writing_language")).sendKeys("test");
 
@@ -138,41 +155,14 @@ public class AstrologerRegistration {
 		driver.findElement(By.cssSelector("#existing_fees")).sendKeys("500");
 
 //		  Are You Associate With any Temple
+		
+//		Available Gadgets
+		WebElement GadgetsField = driver.findElement(By.xpath("(//span[@class='select2-selection select2-selection--multiple'])[4]"));
+		a.moveToElement(GadgetsField).click().build().perform();
+		System.out.println(driver.findElement(By.cssSelector("[class='select2-results__options']")).getText());
+		WebElement Desktopoption = driver.findElement(By.xpath("//li[@class='select2-results__option'][1]")); 
+		Desktopoption.click();
 
-//		  
-//		  
-//		  
-//		  
-//		  WebElement dropdownAvailableGadgets = driver.findElement(By.xpath("//section[contains(@class,'text-light bg-light p-2 formsection')]//form"));
-//		  dropdownAvailableGadgets.click();
-//	      WebElement option = driver.findElement(By.xpath("//section[contains(@class,'text-light bg-light p-2 formsection')]//form//option[text()='Desktop']"));
-//	      option.click();
-//	      
-
-//	      WebElement dropdownCategory = driver.findElement(By.xpath("//section[contains(@class,'text-light bg-light p-2 formsection')]//form"));
-//	      dropdownCategory.click();
-
-//	      WebElement element = driver.findElement(By.id("continue"));
-//	      Actions actions = new Actions(driver);
-//	      actions.moveToElement(element).click().build().perform();
-
-		// css div[class='pac-item'] span
-//		driver.findElement(By.id("autocomplete")).sendKeys("kota");
-//		Thread.sleep(2000);
-//		List<WebElement> options = driver.findElements(By.cssSelector("iv[class='pac-item'] span"));
-//
-//		for (WebElement option11 : options) {
-//
-//			if (option11.getText().equalsIgnoreCase("Rajasthan, India")) {
-//				option11.click();
-//				break;
-//			}
-//		}
-
-//	        WebElement uploadButton = driver.findElement(By.cssSelector(".upload-icn"));
-//	        uploadButton.click();
-//	        WebElement fileInput = driver.findElement(By.cssSelector(".upload-icn"));
-//	        fileInput.sendKeys("C:\\Users\\pc\\Downloads\\6369.jpg");
 
 	}
 }
