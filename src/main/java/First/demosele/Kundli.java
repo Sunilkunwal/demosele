@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Kundli {
@@ -25,6 +26,7 @@ public class Kundli {
 		  WebDriver driver = new ChromeDriver();
 		  driver.manage().window().maximize();
 		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		  Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		  driver.get("https://astro.synilogictech.com/free-kundali");
 		  
 		 //Date of Birth
@@ -43,6 +45,9 @@ public class Kundli {
 	      
 	    
 	      //Place of birth
+	      Actions a = new Actions(driver);
+	      WebElement Style = driver.findElement(By.xpath("//select[contains(@name,'style_field')]"));
+	      a.moveToElement(Style).click().build().perform();
 	      driver.findElement(By.id("free_kundli_location")).sendKeys("kota");
 	      List<WebElement> options =driver.findElements(By.xpath("//div[@class='pac-item'] /span"));
 			 
@@ -76,8 +81,12 @@ public class Kundli {
 	    
 	    
 	    //Submit Button 
-	    Thread.sleep(1000);
-	    driver.findElement(By.xpath("//div[@class='text-right']")).click();
+	    WebElement SubmiButton =driver.findElement(By.xpath("//button[normalize-space()='Get Result']"));
+	    a.moveToElement(SubmiButton).click().build().perform();
+	    
+		// submit Toast
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("toast-container")));
+		System.out.println(driver.findElement(By.id("toast-container")).getText());
 
 	}
 
