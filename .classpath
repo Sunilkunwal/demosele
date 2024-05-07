@@ -14,15 +14,15 @@
 	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
+			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -38,12 +38,17 @@
 	</classpathentry>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
 		<attributes>
+			<attribute name="ignore_optional_problems" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="ignore_optional_problems" value="true"/>
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/pc/Downloads/commons-io-2.16.1/commons-io-2.16.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/Downloads/commons-io-2.16.1/commons-io-2.16.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/Downloads/commons-io-2.16.1/commons-io-2.16.1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/Downloads/commons-io-2.16.1/commons-io-2.16.1-tests.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/Downloads/commons-io-2.16.1/commons-io-2.16.1-test-sources.jar"/>
 	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>
@@ -51,15 +56,6 @@
 			<attribute name="ignore_optional_problems" value="true"/>
 			<attribute name="m2e-apt" value="true"/>
 			<attribute name="test" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/pc/.m2/repository/org/seleniumhq/selenium/selenium-support/4.20.0/selenium-support-4.20.0.jar" sourcepath="C:/Users/pc/.m2/repository/org/seleniumhq/selenium/selenium-support/4.20.0/selenium-support-4.20.0-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.seleniumhq.selenium"/>
-			<attribute name="maven.artifactId" value="selenium-support"/>
-			<attribute name="maven.version" value="4.20.0"/>
-			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

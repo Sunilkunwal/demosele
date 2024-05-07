@@ -1,4 +1,4 @@
-package TestingAcademy;
+package Assignments;
 
 import java.time.Duration;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class AssignmentTest3 {
+public class Assignment3Test {
 public static void main(String[] args) throws InterruptedException {
 System.setProperty("webdriver.chrome.driver",
 				"/home/sunil/Downloads/Selenium Drivers/chromedriver-linux64/chromedriver");
