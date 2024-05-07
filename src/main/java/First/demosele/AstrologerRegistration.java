@@ -18,7 +18,7 @@ public class AstrologerRegistration {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //		driver.manage().window().maximize();
@@ -39,12 +39,12 @@ public class AstrologerRegistration {
 		driver.findElement(By.cssSelector("#validationCustom02")).sendKeys("Astro Sunil");
 
 //		 Email
-		driver.findElement(By.cssSelector("#inputEmail4")).sendKeys("Sunil452@mail.com");
+		driver.findElement(By.cssSelector("#inputEmail4")).sendKeys("Sunil45452@mail.com");
 
 //		 Mobile No.
 		driver.findElement(By.cssSelector(
 				"body > section:nth-child(8) > form:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > input:nth-child(2)"))
-				.sendKeys("9878974785");
+				.sendKeys("9878114785");
 
 //		  Birth Date
 		driver.findElement(By.name("birth_date")).sendKeys("01january	2024");
