@@ -1,4 +1,4 @@
-package TestingAcademy;
+package Assignments;
 
 import java.util.List;
 
