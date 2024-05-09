@@ -17,7 +17,7 @@ public class BrokenLinks {
 
 	public static void main(String[] args) throws MalformedURLException, IOException {
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\pc\\Downloads\\Selenium Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 //	        broken URl
 //	        step-1 is to get all urls tied up to the links using Selenium
