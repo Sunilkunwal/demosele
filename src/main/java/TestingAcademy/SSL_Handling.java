@@ -49,7 +49,8 @@ public class SSL_Handling {
 		driver.get("https://expired.badssl.com/");
 		
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("C:\\Users\\pc\\Downloads\\Selenium ScreenShot\\screenshot.png"));
+//		FileUtils.copyFile(src, new File("C:\\Users\\pc\\Downloads\\Selenium ScreenShot\\screenshot.png"));
+		FileUtils.copyFile(src, new File("/home/sunil/Pictures/Selenium_SC/screenshot.png"));
 		
 		System.out.println(driver.getTitle());
 	}
