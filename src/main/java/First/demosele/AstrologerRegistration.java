@@ -93,6 +93,7 @@ public class AstrologerRegistration {
 		List<WebElement> Locationoptions = driver
 				.findElements(By.xpath("//body/div[@class='pac-container pac-logo']/div[1]/span[2]/span[1]"));
 
+		System.out.println(Locationoptions);
 		for (WebElement optionL : Locationoptions) {
 
 			if (optionL.getText().equalsIgnoreCase("kota")) {
