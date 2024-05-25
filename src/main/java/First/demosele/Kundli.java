@@ -87,7 +87,7 @@ public class Kundli {
 		// submit Toast
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("toast-container")));
 		System.out.println(driver.findElement(By.id("toast-container")).getText());
-
+//		zaid
 	}
 
 }
